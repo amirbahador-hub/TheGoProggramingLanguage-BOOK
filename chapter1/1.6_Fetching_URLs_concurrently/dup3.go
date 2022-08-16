@@ -23,20 +23,40 @@ func randSeq(n int) string {
 }
 
 func main() {
-  // 46.94s elapsed
+  // 21.26s elapsed
   start := time.Now()
+  ch := make(chan string)
   for _, filename := range os.Args[1:] {
     data, _ := ioutil.ReadFile(filename)
     for _, line := range strings.Split(string(data), "\n") {
-      img, _ := os.Create(randSeq(10)+".jpg")
-      defer img.Close()
-
-      response, _ := http.Get(line)
-      defer response.Body.Close()
-
-      b, _ := io.Copy(img, response.Body)
-      fmt.Println("File size: ", b)
+      go fetch(line, ch)
     }
+    for range strings.Split(string(data), "\n")  {
+    fmt.Println(<-ch)
+  }
+
   }
   fmt.Printf("%.2fs elapsed\n", time.Since(start).Seconds())
 }
+
+func fetch(url string, ch chan <- string) {
+  start := time.Now()
+  resp, err := http.Get(url)
+  if err != nil {
+    ch <- fmt.Sprint(err) // sebd ti channel ch
+    return
+  }
+
+  img, _ := os.Create(randSeq(10)+".jpg")
+  defer img.Close()
+  nbytes, err := io.Copy(img, resp.Body)
+
+  resp.Body.Close()
+  if err != nil {
+    ch <- fmt.Sprintf("while reading %s: %v", url, err)
+    return
+  }
+  secs := time.Since(start).Seconds()
+  ch <- fmt.Sprintf("%.2fs %7d %s", secs, nbytes, url)
+}
+
