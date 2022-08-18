@@ -4,10 +4,22 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 )
+
+var character = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+func generateRandomName(n int) string {
+	name := make([]rune, n)
+	for i := range name {
+		name[i] = character[rand.Intn(len(character))]
+	}
+	return string(name)
+}
 
 func generateUrl() {
 	urls := ""
@@ -50,7 +62,8 @@ func fetchUrlWithChannel(url string, ch chan<- string) {
 		ch <- fmt.Sprint(err)
 		return
 	}
-	nBytes, err := io.Copy(ioutil.Discard, response.Body)
+	image, _ := os.Create(generateRandomName(10) + ".jpg")
+	nBytes, err := io.Copy(image, response.Body)
 	if err != nil {
 		ch <- fmt.Sprint(err)
 	}
@@ -64,7 +77,8 @@ func fetchUrl(url string) string {
 	if err != nil {
 		return ""
 	}
-	nBytes, err := io.Copy(ioutil.Discard, response.Body)
+	image, _ := os.Create(generateRandomName(10) + ".jpg")
+	nBytes, err := io.Copy(image, response.Body)
 	if err != nil {
 		return ""
 	}
