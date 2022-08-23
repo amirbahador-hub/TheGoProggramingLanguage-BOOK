@@ -4,7 +4,8 @@ import (
   "fmt"
   "os"
   "strconv"
-  "github.com/amirbahador-hub/TheGoProggramingLanguage-BOOK-/tree/master/chapter2/2.6.Packages_and_Files/temp/tempconv"
+  "github.com/amirbahador-hub/TheGoProggramingLanguage-BOOK-/chapter2/2.6.Packages_and_Files/temp/tempconv"
+  //"github.com/amirbahador-hub/TheGoProggramingLanguage-BOOK-/tree/master/chapter2/2.6.Packages_and_Files/temp/tempconv"
   //"github.com/amirbahador-hub/TheGoProggramingLanguage-BOOK-/tree/master/chapter2/2.6.Packages_and_Files/temconv"
   //"gopl.io/ch2/tempconv"
 )
