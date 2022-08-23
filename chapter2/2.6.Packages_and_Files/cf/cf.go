@@ -4,7 +4,8 @@ import (
   "fmt"
   "os"
   "strconv"
-  "gopl.io/ch2/tempconv"
+  "github.com/amirbahador-hub/TheGoProggramingLanguage-BOOK-/tree/master/chapter2/2.6.Packages_and_Files/temconv"
+  //"gopl.io/ch2/tempconv"
 )
 
 func main() {
