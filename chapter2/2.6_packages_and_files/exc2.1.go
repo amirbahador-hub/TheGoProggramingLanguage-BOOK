@@ -1,16 +1,9 @@
 package tempconv
 
-import "fmt"
-
-func (c Celsius) KToC() Kelvin {
+func (c Celsius) CToK() Kelvin {
 	return Kelvin(c + 273.15)
 }
 
-func (k Kelvin) CToK() Celsius {
+func (k Kelvin) KToC() Celsius {
 	return Celsius(k - 273.15)
-}
-
-func main() {
-	fmt.Println(KelvinTemp.CToK().String())
-	fmt.Println(CelsiusTemp.KToC().String())
 }
