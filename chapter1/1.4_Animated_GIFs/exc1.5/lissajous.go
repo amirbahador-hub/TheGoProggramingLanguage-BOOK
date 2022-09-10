@@ -5,27 +5,23 @@ import (
 	"image/color"
 	"image/gif"
 	"io"
-	"log"
 	"math"
 	"math/rand"
-	"net/http"
+	"os"
 )
 
-var palette = []color.Color{color.White, color.Black}
-
-func main() {
-	http.HandleFunc("/", handler4)
-	log.Fatal(http.ListenAndServe("localhost:8000", nil))
-}
-
-func handler4(w http.ResponseWriter, r *http.Request) {
-	lissajous(w)
-}
+var palette = []color.Color{color.White, color.RGBA{R: 0, G: 255, B: 0, A: 1}}
 
 const (
 	whiteIndex = 0
-	blackIndex = 1
+	greenIndex = 1
 )
+
+func main() {
+	// go build lissajous.go
+	// lissajous.go > out.gif
+	lissajous(os.Stdout)
+}
 
 func lissajous(out io.Writer) {
 	const (
@@ -45,7 +41,7 @@ func lissajous(out io.Writer) {
 		for t := 0.0; t < cycles*2*math.Pi; t += res {
 			x := math.Sin(t)
 			y := math.Sin(t*freq + phase)
-			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), blackIndex)
+			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), greenIndex)
 		}
 		phase += 0.1
 		anim.Delay = append(anim.Delay, delay)
