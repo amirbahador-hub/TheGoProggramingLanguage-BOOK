@@ -1,7 +1,9 @@
 package main
+
 import (
   "fmt"
 )
+
 func main() {
   
   var a rune = 255                       // rune == int32 => -214748e49 to 214748e48
@@ -16,7 +18,7 @@ func main() {
   fmt.Println(d)
   var e int64 = 9223372036854775807      // -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
   fmt.Println(e)
-  var f int = 255
+  var f int = 255                        // int == int32 same size but not same type
   fmt.Println(f)
 
   // uintn => 0 to 2^(n) - 1
@@ -28,15 +30,7 @@ func main() {
   fmt.Println(i)
   var j uint64 = 18446744073709551615   // 0 to 18,446,744,073,709,551,615 
   fmt.Println(j)
-  var k uint = 255
+  var k uint = 255                      // unit == unit32 same size but not same type
   fmt.Println(k)
-
-
-
-
-
-
-
-
 
 }
