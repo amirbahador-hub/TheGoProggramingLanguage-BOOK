@@ -16,7 +16,7 @@ func binarySearch(arr []int, value int, defaultIndex ...int) int {
 
 	if arr[mid] == value {
 		return mid + defaultIndexValue
-		/*	if find value, return index of value (min) plus defaultIndexValue,
+		/*	if find value, return index of value (mid) plus defaultIndexValue,
 			because defaultIndexValue illustrate last min var index from last recursive func	*/
 	} else if mid < 1 { // value does not exist in arr
 		return -1
@@ -73,7 +73,12 @@ func main() {
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 12", elapsed)
 
+	start = time.Now()
+	fmt.Println(binarySearch(arr, 200))
+	elapsed = time.Since(start)
+	fmt.Println("elapsed time for 200", elapsed)
+
 	elapsedTotal := time.Since(totlalStart)
 
-	fmt.Println("total time elapsed: ", elapsedTotal) //	68.954µs
+	fmt.Println("total time elapsed: ", elapsedTotal) //	82.2464µs
 }

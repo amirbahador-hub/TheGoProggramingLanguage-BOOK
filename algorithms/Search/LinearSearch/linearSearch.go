@@ -59,8 +59,13 @@ func main() {
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 12", elapsed)
 
+	start = time.Now()
+	fmt.Println(linearSearch(arr, 200))
+	elapsed = time.Since(start)
+	fmt.Println("elapsed time for 200", elapsed)
+
 	elapsedTotal := time.Since(totlalStart)
 
-	fmt.Println("total time elapsed: ", elapsedTotal) //	92.537µs
+	fmt.Println("total time elapsed: ", elapsedTotal) //	98.225µs
 
 }
