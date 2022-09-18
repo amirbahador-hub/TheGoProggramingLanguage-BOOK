@@ -38,30 +38,41 @@ func (rabinCarpParameter *RabinCarp) updateHashValue(index int, text Text) {
 	}
 }
 
-func (pattern Pattern) rabinKarpMatchPattern(text Text) {
+func (pattern Pattern) rabinKarpMatchPattern(text Text) <-chan int {
 	rabinCarpParameter := *buildRabinCarpParameter(text, pattern)
 
+	channel := make(chan int)
+
 	var j int
-	for i := 0; i <= rabinCarpParameter.n-rabinCarpParameter.m; i++ {
-		if rabinCarpParameter.tHash == rabinCarpParameter.pHash {
-			for j = 0; j < rabinCarpParameter.m; j++ {
-				if pattern[j] != text[i+j] {
-					break
+	go func() {
+		for {
+			for i := 0; i <= rabinCarpParameter.n-rabinCarpParameter.m; i++ {
+				if rabinCarpParameter.tHash == rabinCarpParameter.pHash {
+					for j = 0; j < rabinCarpParameter.m; j++ {
+						if pattern[j] != text[i+j] {
+							break
+						}
+					}
+					if j == rabinCarpParameter.m {
+						channel <- i
+					}
+				}
+
+				if i < rabinCarpParameter.n-rabinCarpParameter.m {
+					rabinCarpParameter.updateHashValue(i, text)
 				}
 			}
-			if j == rabinCarpParameter.m {
-				fmt.Println("pattern found in :", i)
-			}
+			close(channel)
+			return
 		}
-
-		if i < rabinCarpParameter.n-rabinCarpParameter.m {
-			rabinCarpParameter.updateHashValue(i, text)
-		}
-	}
+	}()
+	return channel
 }
 
 func main() {
 	var text Text = "hellohehe"
 	var pattern Pattern = "he"
-	pattern.rabinKarpMatchPattern(text)
+	for r := range pattern.rabinKarpMatchPattern(text) {
+		fmt.Println("index if pattern is :", r)
+	}
 }
