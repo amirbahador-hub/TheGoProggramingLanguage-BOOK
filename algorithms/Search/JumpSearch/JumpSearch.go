@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"time"
 )
 
@@ -16,7 +17,7 @@ func binarySearch(arr []int, value int, defaultIndex ...int) int {
 
 	if arr[mid] == value {
 		return mid + defaultIndexValue
-		/*	if find value, return index of value (mid) plus defaultIndexValue,
+		/*	if find value, return index of value (min) plus defaultIndexValue,
 			because defaultIndexValue illustrate last min var index from last recursive func	*/
 	} else if mid < 1 { // value does not exist in arr
 		return -1
@@ -28,57 +29,70 @@ func binarySearch(arr []int, value int, defaultIndex ...int) int {
 	}
 }
 
+func jumpSearch(arr []int, find int) int {
+	step := int(math.Sqrt(float64(len(arr)))) // define step for jump index array
+	index := 0
+	for index < len(arr)-1 { // while condition for jump array
+		index = (index + step) - ((index+step)/(len(arr)-1))*((index+step)%(len(arr)-1)) //	update index from step value and if value more than length of array, set value for length of array
+		if find <= arr[index] {
+			return binarySearch(arr[(index-step):index+1], find, index-step) //	if value less or equal array index value, use binary search for find it
+		}
+	}
+	return -1
+}
+
 func main() {
 	arr := []int{1, 3, 5, 8, 11, 13, 14, 19, 27}
 
-	totlalStart := time.Now()
+	totalStart := time.Now()
 
 	start := time.Now()
-	fmt.Println(binarySearch(arr, 1))
+	fmt.Println(jumpSearch(arr, 1))
 	elapsed := time.Since(start)
 	fmt.Println("elapsed time for 1", elapsed)
 
 	start = time.Now()
-	fmt.Println(binarySearch(arr, 5))
+	fmt.Println(jumpSearch(arr, 5))
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 5", elapsed)
 
 	start = time.Now()
-	fmt.Println(binarySearch(arr, 8))
+	fmt.Println(jumpSearch(arr, 8))
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 8", elapsed)
 
 	start = time.Now()
-	fmt.Println(binarySearch(arr, 11))
+	fmt.Println(jumpSearch(arr, 11))
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 11", elapsed)
 
 	start = time.Now()
-	fmt.Println(binarySearch(arr, 13))
+	fmt.Println(jumpSearch(arr, 13))
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 13", elapsed)
 
 	start = time.Now()
-	fmt.Println(binarySearch(arr, 19))
+	fmt.Println(jumpSearch(arr, 19))
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 19", elapsed)
 
 	start = time.Now()
-	fmt.Println(binarySearch(arr, 27))
+	fmt.Println(jumpSearch(arr, 27))
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 27", elapsed)
 
 	start = time.Now()
-	fmt.Println(binarySearch(arr, 12))
+	fmt.Println(jumpSearch(arr, 12))
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 12", elapsed)
 
 	start = time.Now()
-	fmt.Println(binarySearch(arr, 200))
+	fmt.Println(jumpSearch(arr, 200))
 	elapsed = time.Since(start)
 	fmt.Println("elapsed time for 200", elapsed)
 
-	elapsedTotal := time.Since(totlalStart)
+	elapsedTotal := time.Since(totalStart)
 
-	fmt.Println("total time elapsed: ", elapsedTotal) //	82.2464µs
+	fmt.Println("total time elapsed: ", elapsedTotal) //	101.161µs
+
 }
