@@ -41,7 +41,7 @@ func (rabinCarpParameter *RabinCarp) updateHashValue(index int, text Text) {
 func (pattern Pattern) rabinKarpMatchPattern(text Text) {
 	rabinCarpParameter := *buildRabinCarpParameter(text, pattern)
 
-	j := 0
+	var j int
 	for i := 0; i <= rabinCarpParameter.n-rabinCarpParameter.m; i++ {
 		if rabinCarpParameter.tHash == rabinCarpParameter.pHash {
 			for j = 0; j < rabinCarpParameter.m; j++ {
