@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func SelectionSort(arr []int) []int {
 	for i := 0; i < len(arr); i++ {
@@ -16,6 +19,9 @@ func SelectionSort(arr []int) []int {
 }
 
 func main() {
-	arr := []int{6, 5, 3, 7, 8}
+	totalStart := time.Now()
+	arr := []int{33, 98, 74, 3, 13, 55, 20, 10, 2, 0, 14, 43, 25, 18, 1, 5, 45, 77, 6, 45, 64, 83, 8, 7}
 	fmt.Println(SelectionSort(arr))
+	elapsedTotal := time.Since(totalStart)
+	fmt.Println("total time elapsed: ", elapsedTotal) //	45.3254µs
 }
