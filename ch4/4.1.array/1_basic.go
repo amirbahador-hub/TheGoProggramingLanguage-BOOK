@@ -30,6 +30,6 @@ func main() {
 	var d = [...]int{5: -1, 8: 2}
 
 	for key, value := range d {
-		fmt.Printf("key: %d, value: %d \n", key, value) // generate all element with zero value expect 5th and 8th element and print -1 and 2
+		fmt.Printf("key: %d, value: %d \n", key, value) // generate all element with zero value expect 5th and 8th element and print -1
 	}
 }
