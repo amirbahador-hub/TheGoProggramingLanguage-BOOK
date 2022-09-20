@@ -5,8 +5,8 @@ import (
 	"time"
 )
 
-//bubble sort is check repeatedly swapping adjustment element
-//this is not suitable for large array
+//	bubble sort is check repeatedly swapping adjustment element
+//	this is not suitable for large array
 func bubbleSort(arr []int) []int {
 	for i := 0; i < len(arr); i++ {
 		for j := 0; j < len(arr)-i-1; j++ { //	n-i-1 because after every value check, don't need check again of last elements
