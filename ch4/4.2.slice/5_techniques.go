@@ -24,7 +24,7 @@ func nonempty2(arr []string) []string {
 }
 
 func nonempty3(arr []string) []string {
-	out := make([]string, len(arr))
+	var out []string
 	copy(out, arr)
 	i := 0
 	for _, value := range out {

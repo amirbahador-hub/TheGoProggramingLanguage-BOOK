@@ -18,7 +18,7 @@ func main() {
 	a := [...]int{0, 1, 2, 3, 4, 5}
 	b := [...]int{0, 1, 2, 3, 4, 5}
 
-	//reverse(a) // cannot use a (variable of type [6]int) as type []int in argument to reverseSlice
+	//reverseSlice(a) // cannot use a (variable of type [6]int) as type []int in argument to reverseSlice
 
 	//rotate two-step in left
 	reverseSlice(a[:2])
