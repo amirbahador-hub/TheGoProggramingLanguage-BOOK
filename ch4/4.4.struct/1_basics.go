@@ -116,4 +116,12 @@ func main() {
 	fmt.Println(seen)  //	map[ali:{}]
 	fmt.Println(seen2) //	map[ali:{0 ali qom 0001-01-01 00:00:00 +0000 UTC junior 100 0}]
 	fmt.Println(seen3) //	map[ali:{2}]
+
+	//package p
+	//type T struct{ a, b int } // a and b are not exported
+	//package q
+	//import "p"
+	//var _ = p.T{a: 1, b: 2} // compile error: can't reference a, b
+	//var _ = p.T{1, 2}
+	//// compile error: can't reference a, b
 }
