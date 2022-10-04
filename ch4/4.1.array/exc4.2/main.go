@@ -13,11 +13,11 @@ func main() {
 	flag.Parse()
 	switch *shaType {
 	case "sha384":
-		fmt.Println(sha512.Sum384([]byte(*value)))
+		fmt.Printf("%x \n", sha512.Sum384([]byte(*value)))
 	case "sha512":
-		fmt.Println(sha512.Sum512([]byte(*value)))
+		fmt.Printf("%x \n", sha512.Sum512([]byte(*value)))
 	default:
-		fmt.Println(sha256.Sum256([]byte(*value)))
+		fmt.Printf("%x \n", sha256.Sum256([]byte(*value)))
 	}
 }
 
