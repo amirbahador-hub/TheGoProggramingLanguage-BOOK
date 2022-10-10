@@ -1,0 +1,181 @@
+67 issues:
+----------------------------------------
+Number: 48298
+User:   dsnet
+Title:  encoding/json: add Decoder.DisallowDuplicateFields
+Age:    396 days
+Time:    less than the month old days
+----------------------------------------
+Number: 36225
+User:   dsnet
+Title:  encoding/json: the Decoder.Decode API lends itself to misuse
+Age:    1025 days
+Time:    less than the month old days
+----------------------------------------
+Number: 28923
+User:   mvdan
+Title:  encoding/json: speed up the decoding scanner
+Age:    1418 days
+Time:    less than the month old days
+----------------------------------------
+Number: 42571
+User:   dsnet
+Title:  encoding/json: clarify Decoder.InputOffset semantics
+Age:    696 days
+Time:    less than the month old days
+----------------------------------------
+Number: 11046
+User:   kurin
+Title:  encoding/json: Decoder internally buffers full input
+Age:    2686 days
+Time:    less than the month old days
+----------------------------------------
+Number: 29035
+User:   jaswdr
+Title:  proposal: encoding/json: add error var to compare  the returned 
+Age:    1410 days
+Time:    less than the month old days
+----------------------------------------
+Number: 40127
+User:   rogpeppe
+Title:  encoding/json: add Encoder.EncodeToken method
+Age:    823 days
+Time:    less than the month old days
+----------------------------------------
+Number: 43716
+User:   ggaaooppeenngg
+Title:  encoding/json: increment byte counter when using decoder.Token
+Age:    633 days
+Time:    less than the month old days
+----------------------------------------
+Number: 33854
+User:   Qhesz
+Title:  encoding/json: unmarshal option to treat omitted fields as null
+Age:    1140 days
+Time:    less than the month old days
+----------------------------------------
+Number: 14750
+User:   cyberphone
+Title:  encoding/json: parser ignores the case of member names
+Age:    2405 days
+Time:    less than the month old days
+----------------------------------------
+Number: 34543
+User:   maxatome
+Title:  encoding/json: Unmarshal & json.(*Decoder).Token report differen
+Age:    1110 days
+Time:    less than the month old days
+----------------------------------------
+Number: 48950
+User:   AlexanderYastrebov
+Title:  encoding/json: calculate correct SyntaxError.Offset in the strea
+Age:    362 days
+Time:    less than the month old days
+----------------------------------------
+Number: 43513
+User:   AlexanderYastrebov
+Title:  encoding/json: add line number to SyntaxError
+Age:    643 days
+Time:    less than the month old days
+----------------------------------------
+Number: 48277
+User:   Windsooon
+Title:  encoding/json: add an example for InputOffset() function
+Age:    396 days
+Time:    less than the month old days
+----------------------------------------
+Number: 32779
+User:   rsc
+Title:  encoding/json: memoize strings during decode
+Age:    1202 days
+Time:    less than the month old days
+----------------------------------------
+Number: 5901
+User:   rsc
+Title:  encoding/json: allow per-Encoder/per-Decoder registration of mar
+Age:    3372 days
+Time:    less than the month old days
+----------------------------------------
+Number: 31701
+User:   lr1980
+Title:  encoding/json: second decode after error impossible
+Age:    1262 days
+Time:    less than the month old days
+----------------------------------------
+Number: 53170
+User:   Lz-Gustavo
+Title:  proposal: encoding/json: add a function to report whether a []by
+Age:    131 days
+Time:    less than the month old days
+----------------------------------------
+Number: 40128
+User:   rogpeppe
+Title:  proposal: encoding/json: garbage-free reading of tokens
+Age:    823 days
+Time:    less than the month old days
+----------------------------------------
+Number: 40982
+User:   Segflow
+Title:  encoding/json: use different error type for unknown field if the
+Age:    778 days
+Time:    less than the month old days
+----------------------------------------
+Number: 16212
+User:   josharian
+Title:  encoding/json: do all reflect work before decoding
+Age:    2294 days
+Time:    less than the month old days
+----------------------------------------
+Number: 6647
+User:   btracey
+Title:  x/tools/cmd/godoc: display type kind of each named type
+Age:    3274 days
+Time:    less than the month old days
+----------------------------------------
+Number: 26946
+User:   deuill
+Title:  encoding/json: clarify what happens when unmarshaling into a non
+Age:    1520 days
+Time:    less than the month old days
+----------------------------------------
+Number: 41144
+User:   alvaroaleman
+Title:  encoding/json: Unmarshaler breaks DisallowUnknownFields
+Age:    770 days
+Time:    less than the month old days
+----------------------------------------
+Number: 34564
+User:   mdempsky
+Title:  go/internal/gcimporter: single source of truth for decoder logic
+Age:    1109 days
+Time:    less than the month old days
+----------------------------------------
+Number: 22480
+User:   blixt
+Title:  proposal: encoding/json: add omitnil option
+Age:    1807 days
+Time:    less than the month old days
+----------------------------------------
+Number: 22752
+User:   buyology
+Title:  proposal: encoding/json: add access to the underlying data causi
+Age:    1789 days
+Time:    less than the month old days
+----------------------------------------
+Number: 33835
+User:   Qhesz
+Title:  encoding/json: unmarshalling null into non-nullable golang types
+Age:    1141 days
+Time:    less than the month old days
+----------------------------------------
+Number: 28143
+User:   arp242
+Title:  proposal: encoding/json: add "readonly" tag
+Age:    1460 days
+Time:    less than the month old days
+----------------------------------------
+Number: 29750
+User:   jacoelho
+Title:  cmd/vet: stdmethods check gets confused if run on a package name
+Age:    1364 days
+Time:    less than the month old days

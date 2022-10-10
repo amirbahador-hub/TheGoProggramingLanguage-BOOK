@@ -22,6 +22,6 @@ func main() {
 	for input.Scan() {
 		wordNumber[input.Text()]++
 	}
-	
+
 	fmt.Println(wordNumber)
 }
