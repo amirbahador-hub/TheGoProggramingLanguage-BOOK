@@ -1,7 +1,7 @@
 package main
 
 import (
-	"awesomeProject/Git/TheGoProggramingLanguage-BOOK-/ch4/4.2.slice/exc4.10/model"
+	"awesomeProject/Git/TheGoProggramingLanguage-BOOK-/ch4/4.5.json/exc4.10/model"
 	"log"
 	"os"
 	"text/template"
